@@ -5,21 +5,142 @@
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<link href="vendors/css/login-bootstrap.min.css" rel="stylesheet" type="text/css" />
         <title>Olympic</title>
         <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana,sans-serif;
+            margin: 0;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+        /* Caption text */
+        .text {
+            color: chartreuse;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 1px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev, .next, .text {
+                font-size: 11px;
+            }
+        }
+    </style>
     </head>
     <body>
-        <div class="row">
+         <div class="row">
                     <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
         </div>
-        <header class="main-header">
+          <header>
             <nav>
                 <div class="row">
                     <ul class="main-nav">
-                        <li><a href="#history">OLYMPIC GAMES </a></li>
-                        <li><a href="#country">COUNTRIES</a></li>
-                        <li><a href="#sport">SPORTS</a></li>
-                        <li><a href="#result">RESULTS</a></li>
+                        <li><a href="#history" style="color: brown">OLYMPIC GAMES </a></li>
+                        <li><a href="#country" style="color: brown">COUNTRIES</a></li>
+                        <li><a href="#sport" style="color: brown">SPORTS</a></li>
+                        <li><a href="#result" style="color: brown">RESULTS</a></li>
                     </ul>
                 </div>
             </nav>
@@ -29,6 +150,62 @@
                 
             </div>
         </header>
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <!--<div class="numbertext">1 / 3</div>-->
+
+            <img src="Resourses/img/main_backgroud.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides fade">
+            <!--<div class="numbertext">2 / 3</div>-->
+             <img src="Resourses/img/main_background1.jpg" style="width:100%"/>
+        </div>
+
+        <div class="mySlides fade">
+           <!-- <div class="numbertext">3/ 3</div>-->
+            <img src="Resourses/img/main_background2.jpg" style="width:100%" />
+            <!--<img src="../Images/image8.jpg" style="width:100%" />-->
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+    </script>
+
+
+       
+      
        
         
         <section id="history">
@@ -37,7 +214,7 @@
                         <a href="history.html"><img src="Resourses/img/Beijing_national_stadium.jpg"></a>
                     </div>
                     <div class="col span-1-of-2">
-                        <a href="history.html">
+                        <a href="history.html" style="text-decoration:none">
                             <h2 id="">OLYMPIC GAMES</h2>
                         </a>
                     </div>
@@ -83,21 +260,63 @@
        
         
         <footer style="padding-bottom:5%">
-                <div class="row">
+               <!-- <div class="row">
                     <img src="Resourses/img/logo.png" class="logo">
                     <p class="copy-text">
                         Copyright &copy; 2017. All rights reserved. 
                     </p> 
-                </div>
-            <div style="float:right">
+                </div>-->
+			<div style="float: left" class="subcribe">
+				 <table border="0">
+                    <tr>
+						 <td> <p class="admin">Sign up for our newsletter</p></td>
+                       <td>  <div class="input-group">
+                           <span class="input-group-addon"><i class="ion-youtube" aria-hidden="true"></i></span>
+                           <input type="text" class="form-control" maxlength="200" id="txtloginname" name="txt_loginuname" placeholder="EmailId" />
+                            </div>
+						</td>  
+                        <td><button id="btn" class="btn btn-full" style="background-color:#e67e22" onclick="subcribe()">GO</button></td>
+                    </tr>
+                </table>
+			</div>
+              <div style="float:right">
                 <table border="0">
                     <tr>
                         <td> <p class="admin">Admin Login:</p></td>
                         <td><a class="btn btn-full" href="Home.html"> Sign In </a></td>
                     </tr>
                 </table>
-            </div>
+             </div>
         </footer>
-
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script>
+				function subcribe()
+			{
+				debugger
+					var txtboxdetails = document.getElementById("txtloginname");
+					var data_id = txtboxdetails.value;
+				
+				 $.ajax({
+                        url:'http://localhost/olympic/newletter.php',
+                        type:'POST',
+                        data:{id:data_id},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            debugger
+							
+							if(data=="success")
+								alert('Successfull subcribe');
+							else
+								alert('Unsuccessful in scbcribe');
+						},
+                            error:function(jqXHR, textStatus, errorThrown){
+                                 $('#more-info').html('');
+                        alert('Error Loading'); 
+                            }
+                    });
+			}
+		
+		</script>
     </body>
 </html>
