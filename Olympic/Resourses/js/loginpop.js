@@ -1,13 +1,13 @@
 function signin() {
     debugger
-    var username = document.getElementById("txtusername");
-    var password = document.getElementById("txtpassword");
+    var username = document.getElementById("txtloginuname");
+    var password = document.getElementById("txtloginpassword");
 
-    if (username.value == "Ashwini Boyite P" && password.value == "12345") {
-        //alert("Login successfull");
-        window.location = "http://localhost:58602/Templates/Login.html";
+    if (username.value == "AshwiniBoyiteP" && password.value == "12345") {
+        alert("Login successfull");
+        //window.location = "E:/Download/Olympic-master/Olympic-master/Olympic/index.html";
     }
-    else if(username.value == "Kavya Reddy" && password.value == "12345")
+    else if(username.value == "KavyaReddy" && password.value == "12345")
     {
         alert("Login successfull");
     }
