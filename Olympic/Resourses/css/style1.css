@@ -1,0 +1,43 @@
+.logo{
+    margin-top: 15px;
+    width: auto;
+    float: left;
+}
+
+.sub-header{
+    background-image: url(img/olympic_header.jpg);
+    background-repeat: repeat-x;
+/*    padding-bottom: 1%;*/
+    height: 100px;
+}
+
+.flagstyle
+{
+    width:300px;
+    height:200px;
+    border: 1px black solid;
+}
+
+footer{
+    background-color: #979797;
+    height: 50px;
+}
+
+.lblheader{
+/*    margin-top: 0;*/
+    padding-top: 20px;
+    color: #e3e3e3;
+    font-size: 240%;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.copy-text{
+    padding-top: 15px;
+    padding-left: 110px;
+    font-weight: bold;
+}
