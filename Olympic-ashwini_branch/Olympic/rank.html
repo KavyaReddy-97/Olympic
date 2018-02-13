@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Style1.css">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Rank</title>
+    </head>
+    <body>
+       <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		   <li><a href="history.html">History</a></li>
+        <li>
+          <a href="countries.html">Countries</a>
+        </li>
+       
+        <li><a href="sports.html">Sports</a></li>
+		  <li><a href="rank.html">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> Sign Up</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+		  <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a id="0" onclick="display(this)" href="#result" style="text-decoration: none;color: white">RESULTS</a> 
+                </h1>
+            </div>
+        </header>
+        <section class="section-form">
+            <div class="inner" style="background-image: url('Resourses/img/VANCOUVER%202010background.jpg');">
+                <div class="row">
+                    <h2 style="color: aliceblue">BY GAMES</h2>
+                </div>
+                <div class="row">
+					<div style="margin: 0 auto; width: 100%">
+						<table border="0"  style="margin: 0 auto">
+						<tr>
+							<td style="padding: 10px; text-align: left">
+								<label style="color: aliceblue">Olympic Games</label>
+							</td>
+							<td>
+							<div class="col span-1-of-2">
+                                    <select name="Oly-games" id="Oly_games" onchange="selectsports()" class="form-control"  style="width: 196px">
+                                        <option>Games</option>
+										 <option value="1">Tokyo 2020</option>
+                                        <option value="5" >Rio 2016</option>
+										 <option value="3">London 2012</option>
+                                        <option value="4">Sochi 2014</option>
+                                        <option value="2">Vancouver 2010</option>
+                                    </select>
+                                </div>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding: 10px">
+								<label style="color: aliceblue;text-align: left">Sports</label>
+							</td>
+							<td>
+							<div class="col span-1-of-2">
+                                    <select name="Sports" id="Sports" class="form-control"  style="width: 196px">
+                                        <option>Sports</option>
+<!--
+                                        <option value="1">Badminton</option>
+                                        <option value="2">Archery</option>
+                                        <option value="3">Table Tennis</option>
+                                        <option value="4">Luge</option>
+                                        <option value="5">Skeleton</option>
+-->
+                                    </select>
+                                </div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center; padding: 10px">
+								<input id="btnsignin" style="background-color:royalblue;color:white;border: 1px solid royalblue ;border-radius: 4px" type="button" value="Submit" Text="Submit" onclick="submit()" />
+								<input id="btnclear" style="background-color:royalblue;color:white;border: 1px solid royalblue; border-radius: 4px " type="submit" value="Clear" Text="Clear" onclick="submit1()" />
+							</td>
+						</tr>
+					</table>
+					</div>	
+                    </div>
+            </div>
+			<div class="row">
+			<div class="col-md-12" style="text-align:center">
+				
+				<div id="dynamictable" class="divshadow">
+					<label class="countries" id="lbloly"></label>
+					<table class="table table-striped table-bordered sortable table-hover">
+						<thead>
+							<tr class="display_dec">
+								<th align="left" valign="middle" ><span class="ion-ios-people">   	</span>PARTICIPANT</th>
+								<th align="left" valign="middle" >RESULT</th>
+								<th align="left" valign="middle" ><span class="ion-ios-flag">		</span>COUNTRY</th>
+							</tr>
+						</thead>
+						<tbody id="tbodyid">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+        </section>
+         <footer id="result">
+                <div class="row">   
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+                </div>
+        </footer>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+			<script>
+				function submit()
+				{
+					debugger
+                    //var data_id=history.id;
+					var selected = document.getElementById('Oly_games');
+					var sports= document.getElementById('Sports');
+					var data_id=selected.options[selected.selectedIndex].value;
+					var sport=sports.options[sports.selectedIndex].value;
+                    $.ajax({
+                        url:'http://localhost/olympic/Result.php',
+                        type:'POST',
+                        data:{oly:data_id,sports:sport},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            debugger
+                            load(data); 
+                        },
+                            error:function(jqXHR, textStatus, errorThrown){
+                                 $('#more-info').html('');
+                        alert('Error Loading'); 
+                            }
+                    });
+				}
+						   
+				function selectsports()
+					{
+						debugger
+						var selected = document.getElementById('Oly_games');
+						var sports= document.getElementById('Sports');
+						
+						if(selected.options[selected.selectedIndex].value==1||selected.options[selected.selectedIndex].value==5||
+						   selected.options[selected.selectedIndex].value==3)
+							{
+								sports.options.length = 1;
+								var option="<option value='1'>BADMINTON</option>"+
+									"<option value='2'>ARCHERY</option>"+
+									"<option value='3'>TABLE TENNIS</option>";
+								$('#Sports').append(option);
+							}
+						else
+							{
+								sports.options.length = 1;
+								var option1="<option value='4'>LUGE</option>"+
+									"<option value='5'>SKELETON</option>";
+								$('#Sports').append(option1);
+							}
+					}
+				
+				function load(data)
+				{
+					debugger
+					var count = data.length;
+					$("#dynamictable").show();
+                	$("#dynamictable").innerHTML = '';
+					$("#tbodyid").empty();
+					
+					for(var i = 0; i < 3; i++)
+					{
+						if((count)==i)
+							break;
+						$("#lbloly").text(data[i].location);
+						if(data[i].Rank=="Gold")
+							{
+								var td1="<tr><td align='left' valign='middle'>"+ data[i].Name+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Rank+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Cname+"</td></tr>";
+							}
+						else if(data[i].Rank=="Silver")
+							{
+								var td2="<tr><td align='left' valign='middle'>"+ data[i].Name+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Rank+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Cname+"</td></tr>";
+							}
+						else if(data[i].Rank=="Bronze")
+							{
+								var td3="<tr><td align='left' valign='middle'>"+ data[i].Name+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Rank+"</td>"+
+									"<td align='left' valign='middle'>"+ data[i].Cname+"</td></tr>";
+							}
+					}
+				var tb=td1+td2+td3;
+				$("#dynamictable tbody").append(tb);
+				}
+				
+				function submit1()
+				{
+					debugger
+					$("#dynamictable").hide();
+					var sports= document.getElementById('Sports');
+					sports.options.length = 1;
+					$("#Oly_games").val("");
+				}
+			</script>
+    </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+        <title>Olympic</title>
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Style1.css">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Olympic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana,sans-serif;
+            margin: 0;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            /*max-width: 1000px;*/
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+        /* Caption text */
+        .text {
+            color: chartreuse;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 1px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev, .next, .text {
+                font-size: 11px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		  <li><a href="#history">History</a></li>
+        <li>
+          <a href="#country">Countries</a>
+        </li>
+        
+        <li><a href="#sport">Sports</a></li>
+		   <li><a href="#result">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> Sign Up</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+          <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a id="0" onclick="display(this)" href="#result" style="text-decoration: none;color: white">OLYMPICS</a> 
+                </h1>
+            </div>
+        </header>
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <!--<div class="numbertext">1 / 3</div>-->
+
+            <img src="Resourses/img/background_4.jpg" style="width:100%;height: 400px" />
+        </div>
+
+        <div class="mySlides fade">
+            <!--<div class="numbertext">2 / 3</div>-->
+             <img src="Resourses/img/torch-thumbnail.jpg" style="width:100%;height: 400px"/>
+        </div>
+
+        <div class="mySlides fade">
+           <!-- <div class="numbertext">3/ 3</div>-->
+            <img src="Resourses/img/back_ground_main5.jpg" style="width:100%;height: 400px" />
+            <!--<img src="../Images/image8.jpg" style="width:100%" />-->
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 1500); // Change image every 2 seconds
+}
+    </script>
+
+        <section id="history">
+			<div class="row" style="text-align: center">
+				<div class="col-md-6">
+					<a href="history.html"><img src="Resourses/img/Beijing_national_stadium.jpg"></a>
+				</div>
+				<div class="col-md-6"> 
+					<a href="history.html" style="text-decoration:none" class="countries">
+                            <h2 id="">OLYMPIC GAMES</h2>
+                        </a>
+				</div>
+			</div>
+        </section>
+		<section id="country">
+			<div class="row" style="text-align: center">
+				<div class="col-md-6">
+					<a href="countries.html"><img src="Resourses/img/countries.jpg"></a>
+				</div>
+				<div class="col-md-6"> 
+					<a href="countries.html" style="text-decoration:none" class="countries">
+                            <h2 id="">COUNTRIES</h2>
+                        </a>
+				</div>
+			</div>
+        </section>
+		<section id="sport">
+			<div class="row" style="text-align: center">
+				<div class="col-md-6">
+					<a href="sports.html"><img src="Resourses/img/sports.jpg"></a>
+				</div>
+				<div class="col-md-6"> 
+					<a href="sports.html" style="text-decoration:none" class="countries">
+                            <h2 id="">SPORTS</h2>
+                        </a>
+				</div>
+			</div>
+        </section>
+		<section id="result">
+			<div class="row" style="text-align: center">
+				<div class="col-md-6">
+					<a href="rank.html"><img src="Resourses/img/olympics-medals.jpg"></a>
+				</div>
+				<div class="col-md-6"> 
+					<a href="rank.html" style="text-decoration:none" class="countries">
+                            <h2 id="">RESULTS</h2>
+                        </a>
+				</div>
+			</div>
+        </section>
+        <br/>
+        <footer style="padding-bottom:50px">
+                <div class="row">  
+					 <div class="col-md-6">
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+					</div>
+					 <div class="col-md-6">
+						 <table border="0" style="float: right">
+                    <tr>
+                        <td> <p style="color: aliceblue">Admin Login:</p></td>
+                        <td><a class="btn btn-full" href="Home.html"> Sign In </a></td>
+                    </tr>
+                </table>
+					</div>
+                </div>
+              
+        </footer>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script>
+				function subcribe()
+			{
+				debugger
+					var txtboxdetails = document.getElementById("txtloginname");
+					var data_id = txtboxdetails.value;
+				
+				 $.ajax({
+                        url:'http://localhost/olympic/newletter.php',
+                        type:'POST',
+                        data:{id:data_id},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            debugger
+							
+							if(data=="success")
+								alert('Successfull subcribe');
+							else
+								alert('Unsuccessful in scbcribe');
+						},
+                            error:function(jqXHR, textStatus, errorThrown){
+                                 $('#more-info').html('');
+                        alert('Error Loading'); 
+                            }
+                    });
+			}
+		
+		</script>
+    </body>
+</html>

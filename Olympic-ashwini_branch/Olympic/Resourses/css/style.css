@@ -1,0 +1,215 @@
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+/*
+.row{
+    max-width: 960px;
+    margin: 0 auto;
+}
+*/
+
+.main-header{
+    margin-top: 15px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0,0,0,0.4)),url(img/olympic_sports-t2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.sub-header{
+    margin-top: 15px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0,0,0,0.4)),url(img/olympic_header.jpg);
+    background-repeat: repeat-x;
+/*    padding-bottom: 1%;*/
+}
+
+.hero-text-box{
+    position: absolute;
+    
+    top: 40%;
+    left: 50%;
+    transform: translate(-0%,-0%);
+}
+h1{
+/*    margin-top: 0;*/
+    margin-bottom: 20px;
+    color: #e3e3e3;
+    font-size: 240%;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: center;
+}
+h2{
+    padding-top: 25px;
+    text-align: center;
+    color: #585858;
+}
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+    
+    
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 4px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.005s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+/*#history,country,athlete,sport,rank {
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: color .2s ease-out;
+    -moz-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+    transition: color .2s ease-out;*/
+
+img{
+    width: 450px;
+    border-radius: 0;
+}
+
+.logo{
+    margin-top: 15px;
+    width: auto;
+    float: left;
+}
+.admin{
+    padding-right: 10px;
+    float: right;
+}
+
+.btn:link,
+.btn:visited{
+    float: right;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 100;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+   
+    
+}
+
+.btn-full:link,
+.btn-full:visited{
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+    
+}
+
+
+/*.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color:  #e67e22;
+}
+*/
+
+.btn:hover,
+.btn:active{
+    background-color: #cf6d17;
+    
+}
+
+.btn-full:hover,
+.btn-full:active{
+    border: 1px solid #cf6d17;
+}
+
+
+/*.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #cf6d17;
+    color:  #fff;
+}*/
+
+footer{
+    background-color: #979797;
+    padding: 10px 0;
+}
+.copy-text{
+    padding-top: 7px;
+    padding-left: 110px;
+}
+
+
+parent1{
+width: 0px;
+}
+
+.section-links{
+    float: inherit;
+    list-style: none;
+    margin-top: 55px;
+    
+}
+.section-links ul {
+    display: inline-block;
+    margin-left: 40px;
+    vertical-align: top;
+    font-size: 0.914em;
+    line-height: 1.172em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.section-links ul li {
+    padding-bottom: 4px;
+    padding: 0 9px;
+    position: relative;
+}
+.flagstyle
+{
+    width:300px;
+    height:200px;
+    border: 1px black solid;
+}
+
+.inner{
+    margin-top: 30px;
+    margin-left: 15%;
+    width: 70%;
+    margin-bottom: 30px;
+}
+label{
+    /*padding-left: 25%;*/
+}
+.option{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btnn{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 200px;
+    background-color: #a8a8a8;
+}
+

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <meta charset="utf-8" />
+    <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+    <title>Olympic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="vendors/css/login-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendors/css/font-awesome.css" />
+    <link rel="stylesheet" href="vendors/css/login.css" />
+    <link href="vendors/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="vendors/css/animate.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,300,700,700italic,900,100"
+          rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+	
+	
+</head>
+<body class="login-page">
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		   <li><a href="history.html">History</a></li>
+        <li>
+          <a href="countries.html">Countries</a>
+        </li>
+       
+        <li><a href="sports.html">Sports</a></li>
+		  <li><a href="rank.html">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> Sign Up</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+	 <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a style="text-decoration: none;color: white; font-weight: 500">Sign Up</a> 
+                </h1>
+            </div>
+        </header>
+    
+        <div>
+            <section class="content login-page">
+                <div class="container">
+                    <div class="row">
+                        <div class="login-page-container">
+                            <div class="boxed animated flipInX">
+                                  <div class="inner" style="background-image: url('Resourses/img/VANCOUVER%202010background.jpg');width:100%">
+                                    <div id="divsignin">
+                                        <div class="login-title text-center">
+                                            <h1 style="font-size: 200%;color: currentColor"><b>Olympic</b></h1>
+											  <h5 style="color: currentColor"><b>Sign up</b></h5>
+                                        </div>
+                                        <br />
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="ion-android-person"></i></span>
+                                                            <input type="text" class="form-control" maxlength="200" id="txtloginuname" name="txt_loginuname" placeholder="User Name" />
+                                                        </div>
+                                                    </td>
+                                                    <td><span id="span_loginusername" style="color:orangered;visibility:hidden">*</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="ion-locked"></i></span>
+                                                            <input id="txtloginpassword" class="form-control" type="password" placeholder="Password" onkeypress="validateOnEnter(event)" />
+                                                        </div>
+                                                    </td>
+                                                    <td><span id="span_loginpassword" style="color:orangered;visibility:hidden">*</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <label id="lblloginerrormsg" style="color:orangered;visibility:hidden"></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center">
+                                                        <input id="btnsignin" style="background-color:royalblue;color:white;border: 1px solid royalblue; border-radius: 3px" type="button" value="Sign In" Text="Sign In" onclick="signin()" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="vendors/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="Resourses/js/loginpop.js" type="text/javascript"></script>
+        <script src="vendors/js/bootstrap.min.js" type="text/javascript"></script>
+        <!--<script src="../js/SawaJs/Login.js"></script>-->
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                var min_height = jQuery(window).height();
+                jQuery('div.login-page-container').css('min-height', min_height);
+                jQuery('div.login-page-container').css('line-height', min_height + 'px');
+            });
+
+        </script>
+  <footer>
+                <div class="row">   
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+                </div>
+        </footer> 	
+</body>
+</html>

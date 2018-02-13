@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Style1.css">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Olympic</title>
+    </head>
+    <body>
+       <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		  <li><a href="history.html">History</a></li>
+        <li>
+          <a href="countries.html">Countries</a>
+        </li>
+        
+        <li><a href="sports.html">Sports</a></li>
+		  <li><a href="rank.html">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> log out</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+		  <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a id="0" onclick="display(this)" href="#result" style="text-decoration: none;color: white">RESULTS</a> 
+                </h1>
+            </div>
+        </header>
+        <section class="section-form">
+            <div class="inner" style="background-image: url('Resourses/img/VANCOUVER%202010background.jpg');">
+                <div class="row">
+                    <h2 style="color: aliceblue">TOKYO 2020</h2>
+                </div>
+                <div class="row">
+					<div style="margin: 0 auto; width: 100%">
+						<table border="0"  style="margin: 0 auto">
+							<td style="padding: 10px; text-align: left">
+								<label style="color: aliceblue;text-align: left">Sports</label>
+							</td>
+							<td>
+							<div class="col span-1-of-2">
+                                    <select name="Sports" id="Sports" class="form-control" style="width: 196px">
+                                        <option>Sports</option>
+
+                                        <option value="1">Badminton</option>
+                                        <option value="2">Archery</option>
+                                        <option value="3">Table Tennis</option>
+                                     </select>
+                                </div>
+							</td>
+						<tr>
+							<td style="padding: 10px; text-align: left">
+								<label style="color: aliceblue">MEDALS</label>
+							</td>
+							<td>
+							<div class="col span-1-of-2">
+                                    <select name="Oly-games" id="medals" class="form-control"  style="width: 196px">
+										 <option>Select</option>
+										 <option value="Gold">Gold</option>
+                                         <option value="Silver" >Silver</option>
+										 <option value="Bronze">Bronze</option>
+                                    </select>
+                                </div>
+							</td>
+						</tr>
+							<tr>
+								<td style="padding: 10px; text-align: left">
+									<label style="color: aliceblue">ATHLETE</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" maxlength="200" id="txtatlname" name="txtatlname" placeholder="Athlete Name" />
+								</td>
+							</tr>
+							<tr>
+								<td style="padding: 10px; text-align: left">
+									<label style="color: aliceblue">COUNTRY</label>
+								</td>
+								<td>
+									<input type="text" class="form-control" maxlength="200" id="txtcountry" name="txtcountry" placeholder="Country Name" />
+								</td>
+							</tr>
+						<tr>
+							<td colspan="2" style="text-align: center; padding: 10px">
+								<input id="btnsignin" style="background-color:royalblue;color:white;border: 1px solid royalblue;border-radius: 4px " type="button" value="Submit" Text="Submit" onclick="submit()" />
+								<input id="btnclear" style="background-color:royalblue;color:white;border: 1px solid royalblue; border-radius: 4px " type="submit" value="Clear" Text="Clear" onclick="submit1()" />
+							</td>
+						</tr>
+							
+					</table>
+					</div>	
+                    </div>
+            </div>
+		
+        </section>
+         <footer id="result">
+                <div class="row">   
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+                </div>
+        </footer>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script>
+			function submit()
+			{
+				debugger
+                   var sports= document.getElementById('Sports');
+				   var sportid=sports.options[sports.selectedIndex].value;
+				   var medals= document.getElementById('medals');
+				   var medalname=medals.options[medals.selectedIndex].text;
+				   var name=document.getElementById('txtatlname');
+				   var atlname=name.value;
+				
+                    $.ajax({
+                        url:'http://localhost/olympic/Admin.php',
+                        type:'POST',
+                        data:{spo:sportid,med:medalname,ath:atlname},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            debugger
+                            load(data); 
+                        },
+                            error:function(jqXHR, textStatus, errorThrown){
+                                 $('#more-info').html('');
+                        alert('Error Loading'); 
+                            }
+                    });
+			}
+			
+			function load(data)
+			{
+				debugger
+				
+				if(data)
+				{
+					var text='';
+					var medalname=medals.options[medals.selectedIndex].text;
+					var conty=document.getElementById('txtcountry');
+				   	var country=conty.value;
+					text=country+" won "+ medalname + " medal."
+					
+					alert(text);
+					
+					$('#Sports').prop('selectedIndex',0);
+					$('#medals').prop('selectedIndex',0);
+					$('#txtcountry').val('');
+					$('#txtatlname').val('');
+				}
+				else{
+					alert("Enter proper data.");
+					
+					$('#Sports').prop('selectedIndex',0);
+					$('#medals').prop('selectedIndex',0);
+					$('#txtcountry').val('');
+					$('#txtatlname').val('');
+				}
+			}
+			
+			function submit1()
+			{
+					$('#Sports').prop('selectedIndex',0);
+					$('#medals').prop('selectedIndex',0);
+					$('#txtcountry').val('');
+					$('#txtatlname').val('');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+.logo{
+    margin-top: 5px;
+    width: auto;
+    float: left;
+	margin-left: 15px;
+}
+
+.sub-header{
+    background-image: url(img/olympic_header.jpg);
+    background-repeat: repeat-x;
+/*    padding-bottom: 1%;*/
+    height: 100px;
+}
+
+.flagstyle
+{
+    width:300px;
+    height:200px;
+    border: 1px black solid;
+}
+
+footer{
+    background-color: #24292e !important;
+    height: 50px;
+}
+
+.lblheader{
+/*    margin-top: 0;*/
+    padding-top: 20px;
+    color: #e3e3e3;
+    font-size: 240%;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.copy-text{
+    padding-left: 110px;
+    font-weight: bold;
+	color: white;
+}
+
+.image1{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.image2{
+    position: absolute;
+    width: 200px;
+    top:110px;
+    left: 40px;
+}
+.section-links{
+    float: inherit;
+    list-style: none;
+    margin-top: 55px;
+    
+}
+.section-links ul {
+    display: inline-block;
+    margin-left: 40px;
+    vertical-align: top;
+    font-size: 0.914em;
+    line-height: 1.172em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.section-links ul li {
+    padding-bottom: 4px;
+    padding: 0 9px;
+    position: relative;
+}
+
+.link
+{
+    font-family: Arial;
+    font-size: 5px;
+    color: 
+}
+.subcribe
+{
+	font-family:Verdana,sans-serif;
+	font-size: 100.1%;
+	font-weight: 500;
+
+}
+
+.parent{
+    position: relative;
+    height: 90%;
+    top: 0;
+    left: 0;
+	margin-top: 10px;
+}
+.image1{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.image2{
+    position: absolute;
+    width: 200px;
+    top:110px;
+    left: 40px;
+}
+
+.countries
+{
+	color: #586069;
+	font-family: fantasy;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.divshadow
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+	display: none;
+}
+
+.display_dec
+{
+	color: #586069;
+	font-family: fantasy;
+	font-size:15px;
+	text-decoration: none;
+}

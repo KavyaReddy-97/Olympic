@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Style1.css">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Country</title>
+    </head>
+	<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		   <li><a href="history.html">History</a></li>
+        <li>
+          <a href="countries.html">Countries</a>
+        </li>
+        <li><a href="sports.html">Sports</a></li>
+		  <li><a href="rank.html">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> Sign Up</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+        <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a id="0" onclick="display(this)" href="#result" style="text-decoration: none;color: white">COUNTRIES</a> 
+                </h1>
+            </div>
+        </header>
+        <section>
+            <div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center" class="col-md-6">
+                    <a id="1" class="countries" onclick="display(this)" href="#result">INDIA</a>
+                    <div>
+						 <a id="1" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/Indianflag.png" ></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="2" class="countries" onclick="display(this)" href="#result">CHINA</a>
+                        <div>
+							 <a id="2" class="countries" onclick="display(this)" href="#result">
+								 <img class="flagstyle" src="Resourses/img/China_flag.jpg" ></a>
+                        </div>
+                </div>
+            </div>
+            <div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="3" class="countries" onclick="display(this)" href="#result">USA</a>
+                    <div>
+						 <a id="3" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/USA_Flag.png"></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                    <a id="4" class="countries" onclick="display(this)" href="#result">ENGLAND</a>
+                    <div>
+						 <a id="4" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/England_Flag.png" ></a>
+                    </div>
+                </div>
+            </div>
+			<div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="5" class="countries" onclick="display(this)" href="#result">JAPAN</a>
+                    <div>
+						 <a id="5" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/Japan_flag.jpg"></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                    <a id="6" class="countries" onclick="display(this)" href="#result">SPAIN</a>
+                    <div>
+						<a id="6" class="countries" onclick="display(this)" href="#result">
+							<img class="flagstyle" src="Resourses/img/spain_flag.png" ></a>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="7" class="countries" onclick="display(this)" href="#result">REPUBLIC OF KOREA</a>
+                    <div>
+						 <a id="7" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/REPUBLIC%20OF%20KOREA_flag.png"></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                    <a id="8" class="countries" onclick="display(this)" href="#result">GERMANY</a>
+                    <div>
+						 <a id="8" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/GERMANY.png" ></a>
+                    </div>
+                </div>
+            </div>
+			<div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="9" class="countries" onclick="display(this)" href="#result">AUSTRIA</a>
+                    <div>
+						<a id="9" class="countries" onclick="display(this)" href="#result">
+							<img class="flagstyle" src="Resourses/img/AUSTRIA_flag.png"></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                    <a id="10" class="countries" onclick="display(this)" href="#result">RUSSIAN FEDERATION</a>
+                    <div>
+						<a id="10" class="countries" onclick="display(this)" href="#result">
+							<img class="flagstyle" src="Resourses/img/RUSSIAN%20FEDERATION_flag.png" ></a>
+                    </div>
+                </div>
+            </div>
+			<div class="row" style="padding-bottom: 15px">
+                <div style="text-align: center;" class="col-md-6">
+                     <a id="11" class="countries" onclick="display(this)" href="#result">DEMOCRATIC PEOPLE'S REPUBLIC OF KOREA</a>
+                    <div>
+						<a id="11" class="countries" onclick="display(this)" href="#result">
+							<img class="flagstyle" src="Resourses/img/DEMOCRATIC%20PEOPLE%20REPUBLIC%20OF%20KOREA_flag.png"></a>
+                    </div>
+                </div>
+                <div style="text-align: center;" class="col-md-6">
+                    <a id="12" class="countries" onclick="display(this)" href="#result">SINGAPORE</a>
+                    <div>
+						 <a id="12" class="countries" onclick="display(this)" href="#result">
+							 <img class="flagstyle" src="Resourses/img/SINGAPORE_flag.png" ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-bottom: 15px">
+				<div style="text-align: center;" class="col-md-12">
+					<a id="13" class="countries" onclick="display(this)" href="#result">MEXICO</a>
+                    <div>
+						<a id="13" class="countries" onclick="display(this)" href="#result">
+							<img class="flagstyle" src="Resourses/img/MEXICO_flag.png"></a>
+                    </div>
+				</div>
+			</div>
+        <div class="row">
+			<div class="col-md-12" style="text-align:center">
+				<div id="dynamictable1" class="divshadow" ></div>
+			</div>
+		</div>
+
+        </section>
+          <footer id="result">
+                <div class="row">   
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+                </div>
+        </footer>
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+            <script>
+                function display(history)
+                {
+                    debugger
+                    var data_id=history.id;
+                    $.ajax({
+                        url:'http://localhost/olympic/countries.php',
+                        type:'POST',
+                        data:{id:data_id},
+                        dataType:'json',
+                        success:function(data)
+                        {
+                            debugger
+                            load(data); 
+                        },
+                            error:function(jqXHR, textStatus, errorThrown){
+                                 $('#more-info').html('');
+                        alert('Error Loading'); 
+                            }
+                    });
+                }   
+        function load(data)
+        {
+         debugger
+         var count=data.length;
+			$("#dynamictable1").show();
+         $("#dynamictable1") .innerHTML='';
+         $("#sample_2").remove()
+         $("#dynamictable1").append($("<table width=100% id='sample_2' class='table table-striped table-bordered sortable tablehover'>"+ 
+                                      "<thead><tr><th align='left' valign='middle' style='font-size:12px;'>Country Name</th>"+
+                                      "<th align='left' valign='middle' style='font-size:12px;'>Title</th>" + 
+                                      "<th align='left' valign='middle' style='font-size:12px;'>Website</th>" +
+                                      "<th align='left' valign='middle' style='font-size:12px;'>President</th>" +
+                                      "<th align='left' valign='middle' style='font-size:12px;'>Address</th>" +
+                                      "<th align='left' valign='middle' style='font-size:12px;'>Registation_Date</th>" +
+									  "<th align='left' valign='middle' style='font-size:12px;'>Medal Counts</th>" +
+                                      "</tr></thead><tbody>"));
+                    if(count>0)
+                        {
+                                for(var i=0;i<count;i++)
+                                    {
+                                 var table="<tr><td align='left' valign='middle'>" +data[i].Cname+
+                                           "</td><td align='left' valign='middle'>"+data[i].Title+
+                                           "</td><td align='left' valign='middle'><a href=\""+data[i].Website+"\">"+data[i].Website+"</a>"+
+                                           "</td><td align='left' valign='middle'>" +data[i].President+
+                                           "</td><td align='left' valign='middle'>"+data[i].Address+
+                                           "</td><td align='left' valign='middle'>"+data[i].Registation_Date+"</td>"+
+										   "<td align='left' valign='middle'>"+data[i].Medal_count+"</td></tr>";
+                                           $("#sample_2").append(table);
+                                        $("#dynamictable1").append("</tbody></table>");
+                                            
+                                    }
+                        }
+                    else{
+                        var table="<tr><td align='left' valign='middle'>" +data.Cname+
+                                  "</td><td align='left' valign='middle'>"+data.Title+
+                                  "</td><td align='left' valign='middle'><a href=\""+data.Website+"\">"+data.Website+"</a>"+
+                                  "</td><td align='left' valign='middle'>" +data.President+
+                                  "</td><td align='left' valign='middle'>"+data.Address+
+                                  "</td><td align='left' valign='middle'>"+data.Registation_Date+"</td>"+
+								  "<td align='left' valign='middle'>"+data.Medal_count+"</td></tr>";
+                                  $("#sample_2").append(table);
+                               $("#dynamictable1").append("</tbody></table>");
+                    }
+                }
+        
+            </script>
+    </body>
+</html>

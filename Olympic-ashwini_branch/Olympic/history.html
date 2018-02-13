@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/style.css">
+        <link rel="icon" href="Resourses/img/iconlogo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Resourses/css/Style1.css">
+		<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Olympic</title>
+    </head>
+    <body>  
+			<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="margin-left: 20px">
+        <li><a href="index.html">Home</a></li>
+		   <li><a href="history.html">History</a></li>
+        <li>
+          <a href="countries.html">Countries</a>
+        </li>
+        <li><a href="sports.html">Sports</a></li>
+		  <li><a href="rank.html">Result</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html"><span class="ion-android-person"></span> Sign Up</a></li>
+<!--        <li><a href="#"><span class="ion-android-exit"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<!--
+        <div class="row">
+                    <img src="Resourses/img/logo.png" alt="olympic-logo" class="logo">
+            </div>
+-->
+        <header class="sub-header">
+            <div class="row">
+                <h1  style="color: white;cursor: pointer" >
+                   <a id="0" onclick="display(this)" href="#result" style="text-decoration: none;color: white">ALL OLYMPICS</a> 
+                </h1>
+            </div>
+        </header>
+        <section>
+            <div class="row" style="text-align: center;padding-bottom: 30px" >
+                <div class="col-md-6">
+                    <a id="5" class="countries" onclick="display(this)" href="#result">RIO 2016</a>
+                <div class="parent">
+					<a id="5" class="countries" onclick="display(this)" href="#result">
+                    <img class="image1" src="Resourses/img/rio_background.jpg" height="380px">
+					<img class="image2" src="Resourses/img/2016_1.png"></a>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <a id="4" class="countries" onclick="display(this)" href="#result">SOCHI 2014</a>
+                <div class="parent">
+					  <a id="4" class="countries" onclick="display(this)" href="#result">
+                    <img class="image1" src="Resourses/img/sochibackground.jpg" height="380px">
+						  <img class="image2" src="Resourses/img/sochifont.png"></a>
+                </div>
+            </div>
+        </div>
+            <div class="row" style="text-align: center;padding-bottom: 30px">
+                <div class="col-md-6">
+                    <a id="3" class="countries" onclick="display(this)" href="#result">LONDON 2012</a>
+                <div class="parent">
+					  <a id="3" class="countries" onclick="display(this)" href="#result">
+                    <img class="image1" src="Resourses/img/London_background.jpg" height="380px">
+						  <img class="image2" src="Resourses/img/londonicon.jpg" height="220px"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+               <a id="2" class="countries" onclick="display(this)" href="#result" >VANCOUVER 2010</a>
+                 <div class="parent">
+					  <a id="2" class="countries" onclick="display(this)" href="#result" >
+                    <img class="image1" src="Resourses/img/VANCOUVER%202010background.jpg" height="380px">
+						  <img class="image2" src="Resourses/img/VANCOUVER%202010_icon.png" height="220px"></a>
+                </div>
+            </div>
+        </div>
+            <div class="row" style="padding-bottom: 30px">
+            <div class="col-md-6" style="text-align: center">
+                <a id="1" class="countries" onclick="display(this)" href="#result">TOKYO 2020</a>
+                 <div class="parent">
+					  <a id="1" class="countries" onclick="display(this)" href="#result">
+                    <img class="image1" src="Resourses/img/Tokyo_background_main.jpg" height="380px">
+						  <img class="image2" src="Resourses/img/tokyo_icon.png" height="220px"></a>
+                </div>
+            </div>
+        </div>
+		<div class="row">
+			<div class="col-md-12" style="text-align:center">
+				<div id="dynamictable" class="divshadow"></div>
+			</div>
+		</div>
+        
+        </section>
+         <footer id="result">
+                <div class="row">   
+                    <p class="copy-text">
+                        Copyright &copy; 2017. All rights reserved. 
+                    </p>
+                </div>
+        </footer>
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script>
+            function display(history)
+            {
+                //debugger
+                var data_id = history.id;
+                var name=history.text;
+                $.ajax({
+                    url: 'http://localhost/olympic/history.php',
+                    type: 'POST',
+                    data: {id:data_id},     
+                    dataType: 'json',
+                    success: function(data){
+                        //debugger
+                        load(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                                            $('#more-info').html('');
+                        alert('Error Loading');
+                    }
+                });
+            }
+            
+            function load(data)
+            {
+                debugger
+                var count = data.length;
+				$("#dynamictable").show();
+                $("#dynamictable").innerHTML = '';
+                $("#sample_1").remove();
+                $("#dynamictable").append($("<table width='100%' id='sample_1' class='table table-striped table-bordered sortable table-hover'>"                +"<thead><tr><th align='left' valign='middle' style='font-size:12px;'>Location</th>" +
+                                "<th align='left' valign='middle' style='font-size:12px;'>Year</th>" +
+                                "<th align='left' valign='middle' style='font-size:12px;'>Duration</th>" +
+                                "<th align='left' valign='middle' style='font-size:12px;'>Country</th>" +
+                                "</tr></thead><tbody>"));
+                if (count > 0) {
+        for (var i = 0; i < count; i++) {
+                var table="<tr><td align='left' valign='middle'>" + data[i].Location +
+                          "</td> <td align='left' valign='middle'>" + data[i].Year +
+                          "</td> <td align='left' valign='middle'>" + data[i].Duration +
+                          "</td><td align='left' valign='middle'>" + data[i].Country + "</td></tr>";
+                $("#sample_1").append(table);
+                  
+                $("#dynamictable").append("</tbody></table>");
+
+            }
+                }
+                
+                else
+                    {
+                        var table="<tr><td align='left' valign='middle'>" + data.Location +
+                          "</td> <td align='left' valign='middle'>" + data.Year +
+                          "</td> <td align='left' valign='middle'>" + data.Duration +
+                          "</td><td align='left' valign='middle'>" + data.Country + "</td></tr>";
+                $("#sample_1").append(table);
+                  
+                $("#dynamictable").append("</tbody></table>");
+                    }   
+            }
+        </script>
+    </body>
+</html>
